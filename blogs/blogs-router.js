@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
       res.status(200).json(post);
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         error: "The posts information could not be retrieved."
       });
@@ -27,6 +28,7 @@ router.get("/:id", (req, res) => {
       }
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         error: "The post information could not be retrieved."
       });
@@ -47,6 +49,7 @@ router.post("/", (req, res) => {
       res.status(201).json(post);
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         error: "There was an error while saving the post to the database"
       });
@@ -65,6 +68,7 @@ router.delete("/:id", (req, res) => {
       }
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         error: "The post could not be removed"
       });
@@ -92,6 +96,7 @@ router.put("/:id", (req, res) => {
       }
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         error: "The post information could not be modified."
       });
@@ -118,6 +123,7 @@ router.post("/:id/comments", (req, res) => {
             res.status(201).json(comment);
           })
           .catch(error => {
+            console.log(error);
             res.status(500).json({
               error:
                 "There was an error while saving the comment to the database"
@@ -143,6 +149,7 @@ router.get("/:id/comments", (req, res) => {
       }
     })
     .catch(error => {
+      console.log(error);
       res.status(500).json({
         error: "The comments information could not be retrieved."
       });
